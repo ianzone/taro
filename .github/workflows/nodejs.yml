@@ -128,7 +128,6 @@ jobs:
       - name: 构建、测试受影响的项目
         run: pnpm nx affected -t build test
         env:
-          CI: true
           NX_CACHE_VERBOSE_LOGGING: true
 
       - name: 更新 NX 缓存
