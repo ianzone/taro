@@ -94,8 +94,6 @@ jobs:
           key: ${{ runner.os }}-nx-cache-${{ matrix.node-version }}-${{ matrix.target }}-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-nx-cache-${{ matrix.node-version }}-${{ matrix.target }}-
-            ${{ runner.os }}-nx-cache-${{ matrix.node-version }}-
-            ${{ runner.os }}-nx-cache-
 
       - name: 设置 Nx SHAs # nx affected 需要 Nx SHAs
         uses: nrwl/nx-set-shas@v4
