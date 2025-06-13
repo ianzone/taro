@@ -9,17 +9,18 @@
   },
   "targetDefaults": {
     "prod": {
-      "inputs": ["production"],
+      "inputs": ["production", "^production"],
       "dependsOn": ["^prod"],
-      "cache": true
+      "cache": true,
+      "outputs": ["{projectRoot}/dist"]
     },
     "test:ci": {
-      "inputs": ["default"],
+      "inputs": ["default", "^production"],
       "dependsOn": ["prod"],
       "cache": true
     },
     "updateSnapshot": {
-      "inputs": ["default"],
+      "inputs": ["default", "^production"],
       "cache": true
     }
   }

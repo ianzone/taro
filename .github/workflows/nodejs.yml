@@ -123,12 +123,18 @@ jobs:
       - name: Move artifacts
         run: pnpm artifacts
 
-      - name: 构建、测试受影响的项目
-        run: pnpm nx affected -t prod test:ci --parallel=3
+      # 由于部分测试依赖使用 moduleNameMapper 映射，破坏了 NX 的依赖视图，但若加入 package.json 又会造成循环依赖，故无法写成 nx affected -t prod test:ci
+      - name: 构建
+        run: pnpm nx run-many -t prod --parallel=3
+        env:
+          NX_CACHE_VERBOSE_LOGGING: true
+      - name: 测试
+        run: pnpm nx run-many -t test:ci --parallel=3
         env:
           NX_CACHE_VERBOSE_LOGGING: true
 
       - name: 更新 NX 缓存
+        if: ${{ always() }}
         uses: actions/cache/save@v4
         with:
           path: .nx
