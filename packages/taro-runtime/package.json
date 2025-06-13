@@ -37,7 +37,6 @@
     "tslib": "^2.6.2"
   },
   "devDependencies": {
-    "@tarojs/plugin-framework-vue3": "workspace:*",
     "@rollup/plugin-typescript": "^12.1.2",
     "@types/react": "^18.2.79",
     "@vue/runtime-core": "^3.4.23",
