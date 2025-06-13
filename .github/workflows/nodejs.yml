@@ -129,7 +129,6 @@ jobs:
           NX_CACHE_VERBOSE_LOGGING: true
 
       - name: 更新 NX 缓存
-        if: ${{ success() }}
         uses: actions/cache/save@v4
         with:
           path: .nx
