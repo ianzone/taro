@@ -1,5 +1,7 @@
 {
+  // https://nx.dev/reference/nx-json
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  // https://nx.dev/reference/inputs#named-input-conventions
   "namedInputs": {
     "sharedGlobals": [{ "runtime": "node --version" }, { "runtime": "pnpm --version" }],
     "default": ["{projectRoot}/**/*", "sharedGlobals", "!{projectRoot}/**/*.md"],
@@ -12,12 +14,12 @@
       "cache": true
     },
     "test:ci": {
-      "inputs": ["default", "^production"],
-      "dependsOn": ["^test:ci"],
+      "inputs": ["default"],
+      "dependsOn": ["prod"],
       "cache": true
     },
     "updateSnapshot": {
-      "inputs": ["default", "^production"],
+      "inputs": ["default"],
       "cache": true
     }
   }
