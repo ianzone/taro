@@ -360,9 +360,6 @@ importers:
       '@babel/types':
         specifier: 7.24.0
         version: 7.24.0
-      '@tarojs/plugin-platform-h5':
-        specifier: workspace:*
-        version: link:../taro-platform-h5
       '@types/babel__core':
         specifier: 7.20.5
         version: 7.20.5
@@ -16633,10 +16630,10 @@ snapshots:
       '@babel/helpers': 7.27.0
       '@babel/parser': 7.27.0
       '@babel/template': 7.27.0
-      '@babel/traverse': 7.27.0(supports-color@9.4.0)
+      '@babel/traverse': 7.27.0
       '@babel/types': 7.24.0
       convert-source-map: 2.0.0
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -16765,6 +16762,13 @@ snapshots:
     dependencies:
       '@babel/types': 7.24.0
 
+  '@babel/helper-module-imports@7.25.9':
+    dependencies:
+      '@babel/traverse': 7.27.0
+      '@babel/types': 7.27.0
+    transitivePeerDependencies:
+      - supports-color
+
   '@babel/helper-module-imports@7.25.9(supports-color@9.4.0)':
     dependencies:
       '@babel/traverse': 7.27.0(supports-color@9.4.0)
@@ -16775,9 +16779,9 @@ snapshots:
   '@babel/helper-module-transforms@7.26.0(@babel/core@7.24.4)':
     dependencies:
       '@babel/core': 7.24.4
-      '@babel/helper-module-imports': 7.25.9(supports-color@9.4.0)
+      '@babel/helper-module-imports': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
-      '@babel/traverse': 7.27.0(supports-color@9.4.0)
+      '@babel/traverse': 7.27.0
     transitivePeerDependencies:
       - supports-color
 
@@ -17616,6 +17620,18 @@ snapshots:
       '@babel/code-frame': 7.26.2
       '@babel/parser': 7.27.0
       '@babel/types': 7.27.0
+
+  '@babel/traverse@7.27.0':
+    dependencies:
+      '@babel/code-frame': 7.26.2
+      '@babel/generator': 7.27.0
+      '@babel/parser': 7.27.0
+      '@babel/template': 7.27.0
+      '@babel/types': 7.27.0
+      debug: 4.4.0
+      globals: 11.12.0
+    transitivePeerDependencies:
+      - supports-color
 
   '@babel/traverse@7.27.0(supports-color@9.4.0)':
     dependencies:
@@ -23795,6 +23811,10 @@ snapshots:
   debug@4.3.4:
     dependencies:
       ms: 2.1.2
+
+  debug@4.4.0:
+    dependencies:
+      ms: 2.1.3
 
   debug@4.4.0(supports-color@9.4.0):
     dependencies:

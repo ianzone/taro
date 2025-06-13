@@ -22,7 +22,6 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@tarojs/plugin-platform-h5": "workspace:*",
     "@babel/core": "7.24.4",
     "@babel/types": "7.24.0",
     "@types/babel__core": "7.20.5"
